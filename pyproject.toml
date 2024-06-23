@@ -1,21 +1,15 @@
-[tool.poetry]
+[project]
 name = "run-tests-in-aws"
 version = "0.1.0"
-description = ""
-authors = ["Unit111 <unit_1@abv.bg>"]
-readme = "README.md"
+description = "Run tests in AWS"
+authors = [{ name = "Petar Petrov", email = "unit_1@abv.bg" }]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-playwright = "^1.44.0"
-pytest = "^8.2.2"
-pytest-playwright = "^0.5.0"
-pytest-html = "^4.1.1"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+dependencies = [
+    "playwright==1.44.0",
+    "pytest==8.2.2",
+    "pytest-playwright==0.5.0",
+    "pytest-html==4.1.1"
+]
 
 [tool.pytest.ini_options]
 addopts = "-v --html=report.html --self-contained-html"
