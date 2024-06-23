@@ -15,8 +15,7 @@ phases:
       - aws --version
       - AWS_DEFAULT_REGION=ap-south-1
       - echo $AWS_DEFAULT_REGION
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin ***********.dkr.ecr.ap-south-1.amazonaws.com
-      - REPOSITORY_URI=*********.dkr.ecr.ap-south-1.amazonaws.com/cicd
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
   build:
     commands:
       - echo Build started on `date`
