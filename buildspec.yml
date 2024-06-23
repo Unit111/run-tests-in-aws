@@ -11,4 +11,4 @@ phases:
     commands:
       - echo Zipping and uploading code to S3...
       - zip -r code.zip .
-      - aws s3 cp code.zip s3://e2e-tests-bucket-c5b43793-7e95-465b-562a-8d53c37b543c/code.zip
+      - aws s3 cp code.zip s3://$BUCKET_NAME/code.zip
