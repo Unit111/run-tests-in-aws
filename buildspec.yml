@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install awscli
+  build:
+    commands:
+      - echo Zipping and uploading code to S3...
+      - zip -r code.zip .
+      - aws s3 cp code.zip s3://my_bucket/code.zip
